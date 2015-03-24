@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+strong{font-size: 3em; background-color: yellow}
+
+/*css for quotes stopped working when I moved @chosen_song and @mid_num variable into the attr reader*/
