@@ -1,4 +1,19 @@
 <h1>Games#new</h1>
 <p>Starts a new game, displaying first section of lyrics</p>
 
-<quote> "<%= @mid_lyric %>" </quote>
+ <div>
+	<% @chosen_song.lines[@mid_num..@mid_num+3].each do |i| %>
+	<br><br> <strong><%=i.lyric %></strong> 
+	<% end %> 
+</div>
+
+<p>
+	Testing...
+	<br>
+	current artist= <%= @chosen_song.artist.name %> 
+	<br>
+	current song= <%= @chosen_song.title%> 
+<p>
+
+<%= link_to 'Show Try2', try2_game_path %>
+</p>
