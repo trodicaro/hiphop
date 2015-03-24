@@ -1,13 +1,20 @@
 class GamesController < ApplicationController
+  include RapGenius::Client
+  
+  attr_reader :chosen_song, :mid_num
 
+def initialize
+    random = rand(1..100)
+    @chosen_song = RapGenius::Song.find(random)
+    @mid_num = @chosen_song.lines.count/2 
+end
 
   def new
-  	random = rand(1..10000)
-  	@chosen_song = RapGenius::Song.find(random)
-  	@chosen_line = @chosen_song
-  	mid_num = @chosen_song.lines.count/2
-  	@mid_lyric = @chosen_song.lines[mid_num].lyric 
-  
+ 
+    @sample_game = Game.new 
+  	# random = rand(1..100)
+  	# @chosen_song = RapGenius::Song.find(random)
+  	# @mid_num = @chosen_song.lines.count/2
   end
 
   # def start
@@ -16,9 +23,11 @@ class GamesController < ApplicationController
   # end
 
   def success
+
   end
 
   def try2
+     @game
   end
 
   def fail
