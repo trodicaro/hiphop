@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  get '/games/create', to:'games#create'
   get '/games/new', to: 'games#new', as: 'new_game' 
   get '/games/success', to: 'games#success', as: 'success_game'
   get '/games/try2', to: 'games#try2', as: 'try2_game'

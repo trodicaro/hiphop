@@ -1,10 +1,10 @@
 <h1>Games#final</h1>
-<p>This is all the lyrics of the song, your last chance to guess the artist</p>
+<p>These are all the lyrics of the song, your last chance to guess the artist</p>
 
 
  <div>
 	<% @chosen_song.lines.each do |i| %>
-	<br><br> <strong><%=i.lyric %></strong> 
+	 <br><strong id="final"><%=i.lyric %></strong> 
 	<% end %> 
 </div>
 
@@ -15,3 +15,6 @@
 	<br>
 	current song= <%= @chosen_song.title%> 
 <p>
+
+<p>
+	what's your guess?
