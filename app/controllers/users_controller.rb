@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id 
-      redirect_to root_path
+      redirect_to create_game_path 
     else
       @error = 'Incorrect username, email or password'
       render new_user_path

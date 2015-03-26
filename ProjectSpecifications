@@ -1,8 +1,8 @@
  Project Specifications
 
 Research we need to do
-- rapgenius gem
-- rails dropdown forms
+-connecting user_id to Game.new
+-get rid of start game link
 -CSS/HTML games
 -AJAX????/ javascript
 
@@ -33,7 +33,6 @@ As a user I want to be able to log in
 As a user, I want to be able to collect badges of the albums I correctly guessed
 As a user, I want a hint which plays a short clip of the song
 As a user, I want to be able to limit the types of songs the I'm being tested on to things that I know (by year, by genre)
-As an admin, I want t be able to add new songs to the database
 As an admin, I want it to be able to automatically check for new songs and add
 
 

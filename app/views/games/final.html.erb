@@ -3,7 +3,7 @@
 
 
  <div>
-	<% @chosen_song.lines.each do |i| %>
+	<% chosen_song.lines.each do |i| %>
 	 <br><strong id="final"><%=i.lyric %></strong> 
 	<% end %> 
 </div>
@@ -11,9 +11,9 @@
 <p>
 	Testing...
 	<br>
-	current artist= <%= @chosen_song.artist.name %> 
+	current artist= <%= chosen_song.artist.name %> 
 	<br>
-	current song= <%= @chosen_song.title%> 
+	current song= <%= chosen_song.title%> 
 <p>
 
 <p>
