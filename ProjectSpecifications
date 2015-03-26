@@ -1,0 +1,111 @@
+ Project Specifications
+
+Research we need to do
+- rapgenius gem
+- rails dropdown forms
+-CSS/HTML games
+-AJAX????/ javascript
+
+
+NEXT STEPS
+rodica- users and sessions
+hana- finishes game and formatting game views, if time
+-	add code for if line is blank skip and add next line
+-  add code for bleeping out swear words?
+sean- rails multiple choice dropdown form
+
+USER STORIES
+
+first phase-- mvp
+As a user, I want to be able to start a game
+As a user, I want to be able to end the game early (give up) and see the answer
+As a user, I want to be able to know if I'm  right or wrong
+As a user I want to be able to play multiple games in row 
+As a user, I want to be able to play the game again
+As the admin, I want a database of songs from rap genius
+As the admin, I want to be able to add new songs to the database
+As the admin, the database needs to easily pull a list of random artists for each song that includes the person who it is
+As the admin, the database needs to be able to divide the verses from the lyrics and store them in order  
+
+Second phase -- AJAX
+As a user, I want to be able to keep track of my score 
+As a user I want to be able to log in
+As a user, I want to be able to collect badges of the albums I correctly guessed
+As a user, I want a hint which plays a short clip of the song
+As a user, I want to be able to limit the types of songs the I'm being tested on to things that I know (by year, by genre)
+As an admin, I want t be able to add new songs to the database
+As an admin, I want it to be able to automatically check for new songs and add
+
+
+SCHEMA 
+Game Model
+@most_recent_lyrics = [array of the lines]
+@game_id
+@user_id
+
+
+Game Controller
+-pick random song from Rap genius database
+-index it (saves that song and remembers it)
+-picks random line from within that song
+-index it (saves that line and remembers it)
+-******** multiple choice dropdown
+	--(form with dropdown menu- does it need its own controller?)
+	--query rap genius API for song/artist/everything and for 10 other random artists
+	--grab correct answer
+	--grab random array of false answer
+	--combine them
+	--randomize 
+	--and assign to array
+-determines if user answer is right or wrong (compare user answer to @most_recent_song score )
+-redirects to appropriate view  
+-updates @user_id score  (PHASE 2)
+
+
+User Model
+-@user_id
+@user_id score
+-password
+-name
+
+
+User Controller
+-new user form
+-log in for
+
+
+
+PAGES/views
+Welcome page
+
+Game (3 view/ 3 tries)
+	1st page aka "new"- show two lines
+	2nd page aka "try2"- add two more above and below
+	3rd page aka "final"- show entire song
+
+Right Page
+
+Wrong Page
+
+Give Up Page
+
+
+xtras:
+-Edit the lines to @#$&*! edit out curse words and racial slurs 
+-hint button- that gives you year, the name of album other info- or short clip
+-logging in 
+-track your score
+-album artwork
+-adding your own lyrics
+-spotify or youtube link
+-change the artists/ years that display/ number
+-choose if you want less artist options or more lyrics as a hint
+- choose if you play the game to guess the artist or guess the album name 
+-predictive search/autocomplete for responses instead of dropdowns
+-pquery
+
+
+
+
+
+

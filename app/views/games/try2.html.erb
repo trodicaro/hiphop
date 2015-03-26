@@ -1,0 +1,18 @@
+<h1>Games#try2</h1>
+<p>After first fail, displays more lyrics </p>
+
+ 
+ <div>
+	<% @chosen_song.lines[@mid_num-3..@mid_num+6].each do |i| %>
+	<br><br> <strong id="try2" ><%=i.lyric %></strong> 
+	<% end %> 
+</div>
+
+<p>
+	Testing...
+	current artist= <%= @chosen_song.artist.name %> 
+	current song= <%= @chosen_song.title%> 
+<p>
+
+	<%= link_to 'Show Final', final_game_path(@game) %>
+</p>
