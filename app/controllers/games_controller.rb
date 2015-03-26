@@ -1,14 +1,9 @@
 class GamesController < ApplicationController
   include RapGenius::Client
-  
-# def show
-# @songs_to_guess_from = @songs.sample(4)
-# @chosen_song = @songs_to_guess_from.shuffle.first
-
 
   def create
-    @random= rand(1..100)
-    @current_user= 1
+    @random= rand(1..100) #may want to change how random is selected
+    @current_user= 1 #connect to users model
     @game = Game.create!({song_id: @random, user_id: @current_user, score: 0})
     redirect_to try1_game_path(@game)
   end
@@ -27,7 +22,7 @@ class GamesController < ApplicationController
 
 
   def final
-     @game = Game.find(params[:id])
+    @game = Game.find(params[:id])
     @chosen_song = RapGenius::Song.find(@game.song_id)
     @mid_num = @chosen_song.lines.count/2
   end

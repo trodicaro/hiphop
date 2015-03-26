@@ -1,8 +1,8 @@
-<h1>Games#new</h1>
-<p>Starts a new game, displaying first section of lyrics</p>
+<h1>Games#try1</h1>
+<p>Starts game, displaying first section of lyrics</p>
 
  <div>
-	<% @chosen_song.lines[@mid_num..@mid_num+3].each do |i| %>
+	<% chosen_song.lines[mid_num..mid_num+3].each do |i| %>
 	<br><br> <strong id="new" ><%=i.lyric %></strong> 
 	<% end %> 
 </div>
@@ -10,10 +10,12 @@
 <p>
 	Testing...
 	<br>
-	current artist= <%= @chosen_song.artist.name %> 
+	current artist= <%= chosen_song.artist.name %> 
 	<br>
-	current song= <%= @chosen_song.title%> 
+	current song= <%= chosen_song.title%> 
 <p>
 
 <%= link_to 'Show Try2', try2_game_path(@game) %>
 </p>
+
+<%= render 'guess' %>
