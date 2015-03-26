@@ -7,24 +7,27 @@ class GamesController < ApplicationController
 
 
   def create
-    @game = Game.new(game_params)
+    @random= rand(1..100)
+    @current_user= 1
+    @game = Game.create!({song_id: @random, user_id: @current_user, score: 0})
+    redirect_to try1_game_path(@game)
   end
 
-  def new
-    GamesController.create
-    @game = Game.find(game_params)
+  def try1
+    @game = Game.find(params[:id])
     @chosen_song = RapGenius::Song.find(@game.song_id)
     @mid_num = @chosen_song.lines.count/2
   end
 
   def try2
-   @game = Game.find(game_params)
-   @chosen_song = RapGenius::Song.find(@game.song_id)
-   @mid_num = @chosen_song.lines.count/2
+  @game = Game.find(params[:id])
+    @chosen_song = RapGenius::Song.find(@game.song_id)
+    @mid_num = @chosen_song.lines.count/2
   end
 
 
   def final
+     @game = Game.find(params[:id])
     @chosen_song = RapGenius::Song.find(@game.song_id)
     @mid_num = @chosen_song.lines.count/2
   end
@@ -47,11 +50,6 @@ class GamesController < ApplicationController
 #     @chosen_song = RapGenius::Song.find(random)
 #     @mid_num = @chosen_song.lines.count/2
 #   end
- 
-  private 
-  def game_params
-    params.require(:game).permit(:song_id, :user_id, :score)
-  end
 
   # def artist
   # @artist ||= RapGenius::Artist.find(params[:id])

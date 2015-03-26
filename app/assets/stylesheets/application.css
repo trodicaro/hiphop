@@ -17,10 +17,10 @@ strong#new{font-size: 3em; background-color: #EDBF28}
 strong#try2{font-size: 2em; background-color: #EDBF28}
 strong#final{background-color: #EDBF28}
 h1.welcome {font-family: helvetica; font-size: 4em; background-color: #524A51}
-/*html { 
+html { 
   background: url(http://c1.staticflickr.com/9/8662/15987213660_597a2250a6_c.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}*/
+}

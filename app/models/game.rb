@@ -1,6 +1,4 @@
 class Game < ActiveRecord::Base
+# belongs_to :user check this
 
-	def song_id
-		@song_id ||= rand(1..100)
-	end
 end
