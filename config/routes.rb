@@ -16,12 +16,14 @@ Rails.application.routes.draw do
   get '/games/:id/final', to: 'games#final', as: 'final_game'
   get '/games/:id/fail', to: 'games#fail', as: 'fail_game'
 
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+  get 'sessions/new', to: 'sessions#new', as: 'new_session'
+  post 'sessions/create', to: 'sessions#create'
+  #get 'sessions/destroy'
+  get 'log_out', to: 'sessions#destroy'
 
-  get 'users/new'
-  get 'users/create'
+
+  get 'users/new', to: 'users#new', as: 'new_user'
+  post 'users/create', to: 'users#create', as: 'users'
 
 
 
