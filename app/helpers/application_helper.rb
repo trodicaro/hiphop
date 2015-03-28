@@ -8,4 +8,8 @@ def authorized?
   redirect_to root_path unless current_user
 end
 
+def logged_in? 
+  redirect_to user_path(session[:user_id]) if current_user
+end
+
 end

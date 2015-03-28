@@ -1,30 +1,28 @@
 class GamesController < ApplicationController
   include RapGenius::Client
-  before_action :which_lyrics, except: [:create]
+  include ApplicationHelper
 
+  before_action :which_lyrics, except: [:create]
+  before_action :authorized?
+  
   def create
     @random= rand(1..100) #may want to change how random is selected
-    @current_user= 1 #connect to users model
-    @game = Game.create!({song_id: @random, user_id: @current_user, score: 0})
+    @game = Game.create!({song_id: @random, user_id: session[:user_id], score: 0})
     redirect_to try1_game_path(@game)
   end
 
-  def try1
-    
+  def try1       
   end
 
-  def try2
-  
+  def try2  
   end
 
 
-  def final
-   
+  def final   
   end
 
   
   def fail
-
   end
 
   def success

@@ -1,4 +1,4 @@
 class Game < ActiveRecord::Base
-# belongs_to :user check this
+belongs_to :user
 
 end
