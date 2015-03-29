@@ -11,7 +11,20 @@ class GamesController < ApplicationController
     redirect_to try1_game_path(@game)
   end
 
-  def try1       
+  def list_of_answers
+    @game = Game.find(params[:id])
+    @chosen_song = RapGenius::Song.find(@game.song_id)
+    @list_of_answers = []
+    
+    4.times do
+      list_of_answers << RapGenius::Song.find(rand(1..100)).artist.name
+    end
+
+    @list_of_answers << @chosen_song.artist.name
+    @list_of_answers.shuffle!
+  end
+
+  def try1
   end
 
   def try2  
@@ -40,3 +53,6 @@ private
   end
 
 end
+
+ 
+
