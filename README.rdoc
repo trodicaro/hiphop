@@ -1,3 +1,5 @@
 Guess the Artist game that uses the RapGenius API found at https://github.com/timrogers 
 
+App is live at: https://hiphop-quotables.herokuapp.com/ 
+
 
