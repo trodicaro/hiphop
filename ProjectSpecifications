@@ -104,7 +104,10 @@ xtras:
 -pquery
 
 
-
+Rodica work on this (03.28.2015):
+- in games#create: assign the user variable to the session user id (assign the game belongs to current user, line 7)
+- make the score add up for the current game (in try1, try2, final)
+- create the success and failure routes
 
 
 

@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
-# belongs_to :user check this
+include RapGenius::Client
+belongs_to :user
 
 end
