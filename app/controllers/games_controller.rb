@@ -1,53 +1,58 @@
 class GamesController < ApplicationController
   include RapGenius::Client
+  include ApplicationHelper
 
+  before_action :which_lyrics, except: [:create]
+  before_action :authorized?
+  
   def create
     @random= rand(1..100) #may want to change how random is selected
-    @current_user= 1 #connect to users model
-    @game = Game.create!({song_id: @random, user_id: @current_user, score: 0})
+    @game = Game.create!({song_id: @random, user_id: session[:user_id], score: 0})
     redirect_to try1_game_path(@game)
   end
 
+  def list_of_answers
+    @game = Game.find(params[:id])
+    @chosen_song = RapGenius::Song.find(@game.song_id)
+    @list_of_answers = []
+    
+    4.times do
+      list_of_answers << RapGenius::Song.find(rand(1..100)).artist.name
+    end
+
+    @list_of_answers << @chosen_song.artist.name
+    @list_of_answers.shuffle!
+  end
+
   def try1
-    @game = Game.find(params[:id])
-    @chosen_song = RapGenius::Song.find(@game.song_id)
-    @mid_num = @chosen_song.lines.count/2
   end
 
-  def try2
-  @game = Game.find(params[:id])
-    @chosen_song = RapGenius::Song.find(@game.song_id)
-    @mid_num = @chosen_song.lines.count/2
+  def try2  
   end
 
 
-  def final
-    @game = Game.find(params[:id])
-    @chosen_song = RapGenius::Song.find(@game.song_id)
-    @mid_num = @chosen_song.lines.count/2
+  def final   
   end
 
-  # def answer
-  #   if 
-  #   redirect_to success_game_path 
-  #   else
-  #   redirect_to fail_game_path
-  # end
   
-  # def fail
-  #   random = rand(1..100)
-  #   @chosen_song = RapGenius::Song.find(random)
-  #   @mid_num = @chosen_song.lines.count/2
-  # end
+  def fail
+  end
 
-  # def success
-# random = rand(1..100)
-#     @chosen_song = RapGenius::Song.find(random)
-#     @mid_num = @chosen_song.lines.count/2
-#   end
+  def success
+  end
 
   # def artist
   # @artist ||= RapGenius::Artist.find(params[:id])
   # end
 
+private
+  def which_lyrics
+    @game = Game.find(params[:id])
+    @chosen_song = RapGenius::Song.find(@game.song_id)
+    @mid_num = @chosen_song.lines.count/2
+  end
+
 end
+
+ 
+

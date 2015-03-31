@@ -8,13 +8,15 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id 
-      redirect_to create_game_path 
+      redirect_to user_path(@user) 
     else
       @error = 'Incorrect username, email or password'
       render new_user_path
     end
 
+  def show #show dashboard or profile
 
+  end
 
   end
 

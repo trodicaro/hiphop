@@ -21,11 +21,11 @@ Rails.application.routes.draw do
   #get 'sessions/destroy'
   get 'log_out', to: 'sessions#destroy'
 
-
-  get 'users/new', to: 'users#new', as: 'new_user'
-  post 'users/create', to: 'users#create', as: 'users'
-
-
+  resources :users, only: [:new, :create, :show]
+  # get 'users/new', to: 'users#new', as: 'new_user'
+  # get 'users/show', to: 'users#show'
+  # post 'users/create', to: 'users#create', as: 'users'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
