@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 <div class="jumbotron center">
 	<div class="panel-heading">
 <h1>Games#final</h1>
 </div>
+=======
+<h1>Oops! That was wrong, try again.  Guess the Artist...</h1>
+>>>>>>> 85d00ed764bf00342f5c157e4ebb7ca399419d42
 <p>These are all the lyrics of the song, your last chance to guess the artist</p>
 </div>
 
@@ -11,14 +15,31 @@
 	<% end %> 
 </div>
 
+
+<% @list = list_of_answers << chosen_song.artist.name %>
+<% @list.shuffle! %>
+<% @list.each do |i| %>
+	<% if i == chosen_song.artist.name %>
+		<%= button_to i, success_game_path, :method => :get %>
+	<% else %>
+		<%= button_to i, fail_game_path, :method => :get %>
+	<% end %>
+<% end %>
+
+
+
 <p>
 	Testing...
 	<br>
 	current artist= <%= chosen_song.artist.name %> 
 	<br>
 	current song= <%= chosen_song.title%> 
+<<<<<<< HEAD
 <p>
 
 <p>
 	what's your guess?</p>
 
+=======
+<p>
+>>>>>>> 85d00ed764bf00342f5c157e4ebb7ca399419d42
