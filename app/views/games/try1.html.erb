@@ -1,11 +1,23 @@
-<h1>Games#try1</h1>
-<p>Starts game, displaying first section of lyrics</p>
+<h1>Guess the Artist...</h1>
 
  <div>
 	<% chosen_song.lines[mid_num..mid_num+3].each do |i| %>
 	<br><br> <strong id="new" ><%=i.lyric %></strong> 
 	<% end %> 
 </div>
+
+
+
+<% @list = list_of_answers << chosen_song.artist.name %>
+<% @list.shuffle! %>
+<% @list.each do |i| %>
+	<% if i == chosen_song.artist.name %>
+		<%= button_to i, success_game_path, :method => :get %>
+	<% else %>
+		<%= button_to i, try2_game_path, :method => :get %>
+	<% end %>
+<% end %>
+
 
 <p>
 	Testing...
@@ -14,20 +26,3 @@
 	<br>
 	current song= <%= chosen_song.title%> 
 <p>
-
-<%= link_to 'Show Try2', try2_game_path(@game) %>
-</p>
-
-<%= render 'guess' %>
-
-<% for i in (0..4) do %>
-  <%= radio_button_tag(chosen_song.artist.name, "chosen_song.artist.name") %>
-  <%= label_tag(chosen_song.artist.name, "chosen_song.artist.name") %>
-<% end %> 
-
-<br>
-
-<%= radio_button_tag(:age, "child") %>
-<%= label_tag(:age_child, "I am younger than 21") %>
-<%= radio_button_tag(:age, "adult") %>
-<%= label_tag(:age_adult, "I'm over 21") %>
