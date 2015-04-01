@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg: #ecf0f1;
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height: 45px;
+$navbar-default-bg: white;
+$navbar-default-brand-color: #cc0000;
+$brand-primary: #a9a9a9;
+$jumbotron-bg: white;
+
+
+
+.center {
+     text-align: center;
+}
+
+.navbar-brand {
+     font-weight: bold;
+}
+
+ul {
+ list-style: none;
+}
+
+
+#start_game {
+	color: white;
+}
+
+.jumbotron { 
+  background:  url(http://33.media.tumblr.com/8ee608a0fe7eb7b5fdd7430ab760f192/tumblr_muz2co3lSv1sh3h09o5_500.gif) no-repeat center center fixed; 
+  background-size: cover;
+  padding: 25px;
+}
+
+h1 {
+	color: 000;
+}
+
+p {
+	color: 000;
+}
+
+
+@import 'bootstrap';

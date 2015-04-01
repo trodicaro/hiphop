@@ -1,5 +1,7 @@
+<div class="panel panel-default">
+<div class="panel-heading">
 <h1>Sign up</h1>
-
+</div><br>
 <%= form_for @user do |f| %>
 <ul>
   <li><%= f.label :username, 'Username:' %></li>
@@ -37,7 +39,8 @@
       <% end %>
       </ul>
     <% end %>
-  <li><%= f.password_field :password_confirmation %></li>
-  <li><%= f.submit 'Sign up' %></li>
+  <li><%= f.password_field :password_confirmation %></li><br>
+  <li><%= f.submit 'Sign up', class: "btn btn-primary" %></li>
 </ul>
 <% end %>
+</div>

@@ -1,6 +1,9 @@
+<div class="jumbotron">
+<div class="panel-heading">
 <h1>Games#try1</h1>
+</div>
 <p>Starts game, displaying first section of lyrics</p>
-
+</div>
  <div>
 	<% chosen_song.lines[mid_num..mid_num+3].each do |i| %>
 	<br><br> <strong id="new" ><%=i.lyric %></strong> 
@@ -15,17 +18,28 @@
 	current song= <%= chosen_song.title%> 
 <p>
 
-<%= link_to 'Show Try2', try2_game_path(@game) %>
+<%= link_to 'Show Try2', try2_game_path(@game), class: "btn btn-primary btn-lg"  %>
 </p>
+
 
 <%= render 'guess' %>
 
-<% for i in (0..4) do %>
+<br><div class="btn-group class" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">chosen_song.artist.name</button>
+  <button type="button" class="btn btn-default">chosen_song.artist.name</button>
+  <button type="button" class="btn btn-default">chosen_song.artist.name</button>
+  <button type="button" class="btn btn-default">chosen_song.artist.name </button>
+  <button type="button" class="btn btn-default">chosen_song.artist.name</button>
+</div><br>
+
+<br><% for i in (0..4) do %>
   <%= radio_button_tag(chosen_song.artist.name, "chosen_song.artist.name") %>
   <%= label_tag(chosen_song.artist.name, "chosen_song.artist.name") %>
 <% end %> 
 
 <br>
+
+
 
 <%= radio_button_tag(:age, "child") %>
 <%= label_tag(:age_child, "I am younger than 21") %>
