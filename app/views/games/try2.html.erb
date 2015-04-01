@@ -1,18 +1,40 @@
+<div class="jumbotron">
+<div class="panel-heading">
 <h1>Games#try2</h1>
+</div>
 <p>After first fail, displays more lyrics </p>
+</div>
+
+<h1>Oops! That was wrong, try again.  Guess the Artist...</h1>
 
  
- <div>
+ <div class="container">
 	<% chosen_song.lines[mid_num-3..mid_num+6].each do |i| %>
 	<br><br> <strong id="try2" ><%=i.lyric %></strong> 
 	<% end %> 
 </div>
 
+
+<% @list = list_of_answers << chosen_song.artist.name %>
+<% @list.shuffle! %>
+<% @list.each do |i| %>
+	<% if i == chosen_song.artist.name %>
+		<%= button_to i, success_game_path, :method => :get, class: "rap_btn btn btn-default btn-lg" %><br>
+	<% else %>
+		<br><%= button_to i, final_game_path, :method => :get, class: "rap_btn btn btn-default btn-lg" %>
+	<% end %>
+<% end %>
+
+
 <p>
 	Testing...
 	current artist= <%= chosen_song.artist.name %> 
 	current song= <%= chosen_song.title%> 
+
 <p>
 
-	<%= link_to 'Show Final', final_game_path(@game) %>
+<%= link_to 'Show Final', final_game_path(@game), class: "btn btn-primary btn-lg center" %>
 </p>
+
+<p>
+
