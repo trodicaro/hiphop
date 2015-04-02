@@ -11,11 +11,21 @@ module GamesHelper
 
 	def list_of_answers
     list_of_answers = []
-   
-    4.times do
-      list_of_answers << RapGenius::Song.find(rand(1..100)).artist.name
-     
+
+    while list_of_answers.length < 4 do
+      
+      begin
+         name = RapGenius::Song.find(rand(1..5000)).artist.name
+         rescue RapGenius::NotFoundError   
+      end 
+      if name != chosen_song.artist.name && list_of_answers.include?(name) == false
+        list_of_answers << name
+      end
+    
+    end 
+    
+    list_of_answers << chosen_song.artist.name
+    list_of_answers.shuffle!
+  	
     end
-    list_of_answers
-  	end
 end

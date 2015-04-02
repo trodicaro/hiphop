@@ -38,7 +38,16 @@ p {
 }
 
 .rap_btn {
-	display: inline;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-block {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @import 'bootstrap';

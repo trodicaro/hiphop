@@ -42,7 +42,3 @@ private
   end
 
 end
-
-#driver code
- 
-p @list_of_answers
