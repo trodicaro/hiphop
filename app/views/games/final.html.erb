@@ -11,10 +11,9 @@
 </div>
 </br>
 
-<% @list = list_of_answers << chosen_song.artist.name %>
-<% @list.shuffle! %>
+
 <div>
-	<% @list.each do |i| %>
+	<% list_of_answers.each do |i| %>
 		<% if i == chosen_song.artist.name %>
 			<div style="float:left;">
 				<%= button_to i, success_game_path, :method => :get, class: "rap_btn btn btn-default btn-lg" %>
