@@ -15,7 +15,7 @@ module GamesHelper
     while list_of_answers.length < 4 do
       
       begin
-         name = RapGenius::Song.find(rand(1..10000)).artist.name
+         name = RapGenius::Song.find(rand(1..100000)).artist.name
          rescue RapGenius::NotFoundError   
       end 
 

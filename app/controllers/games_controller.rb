@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   before_action :authorized?
   
   def create
-    @random= rand(1..100) #may want to change how random is selected
+    @random= rand(1..100000)
     @game = Game.create!({song_id: @random, user_id: session[:user_id], score: 0})
     redirect_to try1_game_path(@game)
   end
