@@ -1,5 +1,7 @@
 Guess the Artist game that uses the RapGenius gem found at https://github.com/timrogers 
 
-App is live at: https://hiphop-quotables.herokuapp.com/ 
+App site: https://hiphop-quotables.herokuapp.com/ 
+
+The RapGenius gem has been deprecated and the app lost the showing of the lyrics of functionality. Looking to restore using gem Lyricfy (https://github.com/javichito/Lyricfy).
 
 
